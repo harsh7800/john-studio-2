@@ -136,7 +136,7 @@ const Navbar = ({
                 About
               </Link>
               <Link
-                href={"/"}
+                href={"/portfolio"}
                 className={cn(
                   "font-semibold text-[22px] relative hover:text-[#F85D2E] transition-all",
                   path === "/portfolio" && "text-[#F85D2E] relative"
