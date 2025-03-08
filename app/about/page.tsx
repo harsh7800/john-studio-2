@@ -29,7 +29,7 @@ const About = () => {
     <div>
       <Navbar className="sticky left-0 translate-x-0" color="black" />
 
-      <header className="relative flex flex-col justify-center space-y-5 pl-10 lg:pl-20 h-[507px] bg-[url(@/public/about-banner.png)]">
+      <header className="relative flex flex-col justify-center space-y-5 pl-10 lg:pl-20 h-[507px] bg-[url(/about-banner.png)]">
         <h1 className="relative text-white z-10 text-5xl font-semibold uppercase">
           About
         </h1>
@@ -320,7 +320,7 @@ can relax and enjoy your photoshoot
         />
       </div>
 
-      <div className="w-full h-[408px] my-10 space-y-5 bg-[url(@/public/yellow_banner.png)] flex items-start pl-20 flex-col justify-center">
+      <div className="w-full h-[408px] my-10 space-y-5 bg-[url(/yellow_banner.png)] flex items-start pl-20 flex-col justify-center">
         <h1 className="relative z-10 text-2xl font-bold uppercase">
           Book Your Session Today!
         </h1>
@@ -337,7 +337,6 @@ can relax and enjoy your photoshoot
           +91 99999 99999
         </button>
       </div>
-      
     </div>
   );
 };
