@@ -71,13 +71,31 @@ const Navbar = ({
         >
           Home
         </Link>
-        <Link href={"/about"} className="hover:text-[#F85D2E] transition-all">
+        <Link
+          href={"/about"}
+          className={cn(
+            "hover:text-[#F85D2E] transition-all",
+            path === "/about" && "text-[#F85D2E] relative"
+          )}
+        >
           About
         </Link>
-        <Link href="/portfolio" className="hover:text-[#F85D2E] transition-all">
+        <Link
+          href="/portfolio"
+          className={cn(
+            "hover:text-[#F85D2E] transition-all",
+            path === "/portfolio" && "text-[#F85D2E] relative"
+          )}
+        >
           Portfolio
         </Link>
-        <Link href={"/contact"} className="hover:text-[#F85D2E] transition-all">
+        <Link
+          href={"/contact"}
+          className={cn(
+            "hover:text-[#F85D2E] transition-all",
+            path === "/contact" && "text-[#F85D2E] relative"
+          )}
+        >
           Contact
         </Link>
         <Button className="bg-[#F85D2E] text-white w-[160px] h-12 rounded-md text-[20px] font-semibold ml-6">

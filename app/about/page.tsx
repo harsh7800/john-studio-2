@@ -33,7 +33,7 @@ const About = () => {
         <h1 className="relative text-white z-10 text-5xl font-semibold uppercase">
           About
         </h1>
-        <p className="relative z-10 max-w-6xl text-white text-[25px]">
+        <p className="relative z-10 w-full lg:max-w-5xl text-white text-[22px]">
           At John studio, we believe in the magic of capturing life’s most
           precious moments. Specializing in wedding, birthday, newborn, and
           model photoshoots, our team is dedicated to transforming your
@@ -58,7 +58,7 @@ const About = () => {
             Welcome to John Studio - where every moment is a masterpiece.
           </p>
 
-          <p className="text-gray-600 mb-8 text-[20px] max-w-3xl leading-relaxed">
+          <p className="text-gray-600 mb-8 text-[16px] max-w-3xl leading-relaxed">
             We specialize in capturing life&aos;s most precious moments with
             artistic precision and creative excellence. Our team of professional
             photographers brings years of experience and a passionate eye for
@@ -70,7 +70,7 @@ const About = () => {
             <Image src={signature} alt="signature" />
             <Link
               href="tel:+919999999999"
-              className="inline-flex items-center justify-center py-0 font-semibold text-[20px] rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center justify-center py-0 font-semibold text-[16px] rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
             >
               +91 99999 99999
             </Link>
@@ -112,15 +112,15 @@ const About = () => {
       <div className="flex relative items-center justify-center sm:justify-start gap-6 lg:gap-[150px] xl:gap-[240px] sm:pl-10 lg:pl-20 my-20 flex-wrap">
         <div>
           <h3 className="text-[25px] font-semibold text-center">10+</h3>
-          <p className="text-[20px] font-semibold">Years of Experience</p>
+          <p className="text-[16px] font-semibold">Years of Experience</p>
         </div>
         <div>
           <h3 className="text-[25px] font-semibold text-center">100+</h3>
-          <p className="text-[20px] font-semibold">Projects Completed</p>
+          <p className="text-[16px] font-semibold">Projects Completed</p>
         </div>
         <div>
           <h3 className="text-[25px] font-semibold text-center">50+</h3>
-          <p className="text-[20px] font-semibold">Satisfied Customer</p>
+          <p className="text-[16px] font-semibold">Satisfied Customer</p>
         </div>
         <Image
           src={shadows}
@@ -179,7 +179,7 @@ const About = () => {
               </CardContent>
             </Card>
           </div>
-          <div className="border w-full space-y-4">
+          <div className=" w-full space-y-4">
             <h3 className="font-bold text-[25px]">Wedding Photography</h3>
             <div className="space-y-8 text-lg">
               <p>
@@ -209,13 +209,13 @@ const About = () => {
         <div className="space-y-6 max-w-4xl w-full">
           <div className="space-y-4">
             <h3 className="font-bold text-[25px]">Birthday Photography</h3>
-            <p className="text-[20px]">
+            <p className="text-[16px]">
               Milestone Moments: Whether it’s a first birthday, a sweet sixteen,
               or a golden jubilee, John studio captures the joy and excitement
               of your special day. Our photographers specialize in creating fun
               and memorable images that reflect the spirit of the celebration.
             </p>
-            <p className="text-[20px]">
+            <p className="text-[16px]">
               Themed Photoshoots: Bring your birthday party theme to life with
               our creative and vibrant photography. From superheroes to
               fairytales, we make sure every detail is captured perfectly.
@@ -224,13 +224,13 @@ const About = () => {
 
           <div className="space-y-4">
             <h3 className="font-bold text-[25px]">Newborn Photography</h3>
-            <p className="text-[20px]">
+            <p className="text-[16px]">
               Welcome to the World: Celebrate the arrival of your little one
               with our tender and heartwarming newborn photoshoots. Our
               photographers are skilled in capturing the innocence and beauty of
               newborns, providing you with timeless images to treasure forever
             </p>
-            <p className="text-[20px]">
+            <p className="text-[16px]">
               Family Portraits: Include the whole family in your newborn
               photoshoot to create beautiful portraits that capture the joy and
               love of your growing family.
@@ -253,17 +253,17 @@ const About = () => {
         <div className="space-y-6 max-w-4xl w-full">
           <div className="space-y-4">
             <h3 className="font-bold text-[25px]">Model Photoshoot</h3>
-            <p className="text-[20px]">
+            <p className="text-[16px]">
               Portfolio Building: Whether you&apos;re an aspiring model or a
               seasoned professional, John studio offers comprehensive model
               photoshoots to help you build a stunning portfolio.
             </p>
-            <p className="text-[20px]">
+            <p className="text-[16px]">
               Fashion and Glamour: Step into the spotlight with our high-fashion
               and glamour photoshoots. Our creative team ensures you look your
               best, providing you with striking images that stand
             </p>
-            <p className="text-[20px]">
+            <p className="text-[16px]">
               Our photographers work with you to highlight your unique style and
               personality.
             </p>
@@ -286,7 +286,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex justify-center flex-wrap gap-10">
+      <div className="flex justify-center flex-wrap gap-5">
         <PerksCard
           image={excellence_icon}
           title="Professional Excellence"
@@ -324,7 +324,7 @@ can relax and enjoy your photoshoot
         <h1 className="relative z-10 text-2xl font-bold uppercase">
           Book Your Session Today!
         </h1>
-        <p className="relative z-10 max-w-4xl font-semibold text-[18px] leading-8">
+        <p className="relative z-10 max-w-4xl font-semibold text-[16px] leading-8">
           At John studio, we believe in the magic of capturing life’s most
           precious moments. Specializing in wedding, birthday, newborn, and
           model photoshoots, our team is dedicated to transforming your
@@ -353,10 +353,10 @@ const PerksCard = ({
   content: string;
 }) => {
   return (
-    <div className="border-3 rounded-t-full px-5 pt-30 pb-5 border-dashed max-w-[350px] flex items-center justify-start flex-col gap-2">
+    <div className="border-3 rounded-t-full px-5 pt-20 pb-10 border-dashed max-w-[350px] flex items-center justify-start flex-col gap-2">
       <Image src={image} alt="excellence_icon" />
-      <h2 className="font-semibold text-[22px] text-black">{title}</h2>
-      <p className="text-[17px] text-center font-semibold">{content}</p>
+      <h2 className="font-semibold text-[18px] text-black">{title}</h2>
+      <p className="text-[14px] text-center font-semibold">{content}</p>
     </div>
   );
 };

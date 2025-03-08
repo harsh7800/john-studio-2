@@ -20,8 +20,8 @@ function Contact() {
   };
 
   return (
-    <div className="w-full bg-white mt-10">
-      <div className="flex flex-wrap items-start gap-[100px] px-[30px] sm:px-[40px] lg:px-[75px]">
+    <div className="w-full bg-white mt-10  px-[30px] sm:px-[40px] lg:px-[75px]">
+      <div className="flex flex-wrap items-start gap-[100px]">
         {/* Contact Form Section */}
 
         <div className="w-full max-w-[400px]">
@@ -30,7 +30,7 @@ function Contact() {
             <div>
               <label
                 htmlFor="fullName"
-                className="text-[20px] font-semibold text-[#5a5a5a] mb-1"
+                className="text-[16px] font-semibold text-[#5a5a5a] mb-1"
               >
                 Full Name
               </label>
@@ -47,7 +47,7 @@ function Contact() {
             <div>
               <label
                 htmlFor="phoneNumber"
-                className="text-[20px] font-semibold text-[#5a5a5a] mb-1"
+                className="text-[16px] font-semibold text-[#5a5a5a] mb-1"
               >
                 Phone Number
               </label>
@@ -86,7 +86,7 @@ function Contact() {
         <div className="flex flex-wrap items-start gap-[100px]">
           {/* Products list */}
           <div>
-            <h2 className="font-bold text-[20px] mb-4">Products</h2>
+            <h2 className="font-bold text-[16px] mb-4">Products</h2>
             <ul className="space-y-2">
               <li>
                 <a
@@ -125,7 +125,7 @@ function Contact() {
 
           {/* Studio List */}
           <div>
-            <h2 className="font-bold text-[20px] mb-4">Studio</h2>
+            <h2 className="font-bold text-[16px] mb-4">Studio</h2>
             <ul className="space-y-2">
               <li>
                 <a
@@ -157,7 +157,7 @@ function Contact() {
           </div>
 
           <div className="md:col-span-1">
-            <h2 className="font-bold text-[20px] mb-4">Get In Touch</h2>
+            <h2 className="font-bold text-[16px] mb-4">Get In Touch</h2>
             <div className="space-y-4">
               <div className="flex items-start space-x-2">
                 <MapPin className="w-5 h-5 mt-1" />

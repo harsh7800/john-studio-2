@@ -58,7 +58,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="border-b pb-10">
       <Navbar color="black" />
       <div className="w-full flex justify-between  items-center mt-24 px-[30px] sm:px-[40px] lg:px-[75px] ">
         <div className="w-full lg:max-w-xl">
@@ -74,7 +74,7 @@ function App() {
             <div className="w-full">
               <label
                 htmlFor="name"
-                className="text-[20px] font-semibold text-gray-700"
+                className="text-[16px] font-semibold text-gray-700"
               >
                 Name
               </label>
@@ -84,7 +84,7 @@ function App() {
                 className="w-full mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
               />
               {errors.name && (
-                <p className="mt-1 text-[20px] text-red-600 font-semibold">
+                <p className="mt-1 text-[16px] text-red-600 font-semibold">
                   {errors.name.message}
                 </p>
               )}
@@ -93,7 +93,7 @@ function App() {
             <div>
               <label
                 htmlFor="email"
-                className="text-[20px] font-semibold text-gray-700"
+                className="text-[16px] font-semibold text-gray-700"
               >
                 Email
               </label>
@@ -109,7 +109,7 @@ function App() {
                 className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
               />
               {errors.email && (
-                <p className="mt-1 text-[20px] font-semibold text-red-600">
+                <p className="mt-1 text-[16px] font-semibold text-red-600">
                   {errors.email.message}
                 </p>
               )}
@@ -118,7 +118,7 @@ function App() {
             <div>
               <label
                 htmlFor="service"
-                className="text-[20px] font-semibold text-gray-700"
+                className="text-[16px] font-semibold text-gray-700"
               >
                 What service are you interested in?
               </label>
@@ -145,7 +145,7 @@ function App() {
             <div>
               <label
                 htmlFor="budget"
-                className="text-[20px] font-semibold text-gray-700"
+                className="text-[16px] font-semibold text-gray-700"
               >
                 Budget
               </label>
@@ -153,7 +153,7 @@ function App() {
                 {...register("budget", {
                   required: "Please select a budget range",
                 })}
-                className="mt-1 text-[20px] font-semibold w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
+                className="mt-1 text-[16px] font-semibold w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
               >
                 <option value="">Select project budget</option>
                 {budgets.map((budget) => (
@@ -172,7 +172,7 @@ function App() {
             <div>
               <label
                 htmlFor="message"
-                className="text-[20px] font-semibold text-gray-700"
+                className="text-[16px] font-semibold text-gray-700"
               >
                 Message
               </label>
@@ -185,7 +185,7 @@ function App() {
                   },
                 })}
                 rows={4}
-                className="mt-1 text-[20px] font-semibold w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
+                className="mt-1 text-[16px] font-semibold w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
               />
               {errors.message && (
                 <p className="mt-1 text-sm text-red-600">
@@ -204,7 +204,7 @@ function App() {
         </div>
 
         <Image
-          className="w-[546px] object-cover border hidden lg:block"
+          className="w-[346px] object-cover hidden lg:block"
           src={contact}
           alt="Photographer with camera"
         />
