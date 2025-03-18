@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 import ShootCategory from "@/components/shoot-category";
 import Testimonial from "@/components/testimonial";
 
-export default function Home() {
+export default async function Home() {
   return (
     <section className="space-y-10">
       <Navbar />

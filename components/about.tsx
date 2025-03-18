@@ -1,3 +1,4 @@
+"use client";
 import { Camera } from "lucide-react";
 import React from "react";
 import { Button } from "./ui/button";
@@ -7,13 +8,18 @@ import camera_icon from "@/public/camera_tripod_icon.svg";
 import edit_icon from "@/public/image_icon.svg";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Link from "next/link";
+import { useProfile } from "./profile-wrapper";
 
 const About = () => {
+  const {
+    profile: { phone },
+  } = useProfile();
   return (
     <section className="min-h-screen px-[30px] sm:px-[40px] lg:px-[75px] ">
       {/* About Section 1 */}
-      <div className="flex flex-col-reverse md:flex-row justify-between gap-12 items-center">
-        <div>
+      <div className="flex flex-col-reverse lg:flex-row justify-between gap-10 items-center">
+        <div className="w-full lg:max-w-3xl">
           <div className="flex items-center gap-2 text-gray-600 mb-4">
             <Camera />
             <span className="text-xs uppercase font-semibold tracking-wider">
@@ -22,34 +28,40 @@ const About = () => {
           </div>
 
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            About Our Studio
+            About M Capture Studio
           </h1>
 
-          <p className="text-xl mb-4 font-semibold">
-            Welcome to John Studio - where every moment is a masterpiece.
+          <p className="text-gray-600 mb-8  leading-relaxed">
+            Welcome to M Capture Studio, where every frame tells a story! With 9
+            years of experience, we specialize in capturing life’s most
+            cherished moments with creativity and precision.
           </p>
 
-          <p className="text-gray-600 mb-8 max-w-3xl leading-relaxed">
-            We specialize in capturing life&aos;s most precious moments with
-            artistic precision and creative excellence. Our team of professional
-            photographers brings years of experience and a passionate eye for
-            detail to every shoot, ensuring your memories are preserved in
-            stunning clarity.
+          <p className="text-gray-600 mb-8 leading-relaxed">
+            From weddings to portfolio shoots, corporate events, and cover song
+            productions, we bring a unique touch to every project. Whether it’s
+            an indoor studio session or an outdoor adventure, we ensure each
+            shot reflects your vision beautifully.
+          </p>
+          <p className="text-[#F85D2E] mb-8 leading-relaxed">
+            At M Capture Studio, photography isn’t just about pictures—it’s
+            about memories that last a lifetime. Let’s create something
+            extraordinary together!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size={"lg"}
-              className="bg-black text-white px-8 h-14 text-[16px] rounded-lg hover:bg-gray-800 transition-colors"
+              className="bg-black text-white px-8 h-14 text-[20px] rounded-sm hover:bg-gray-800 transition-colors"
             >
               Discover More
             </Button>
-            <a
-              href="tel:+919999999999"
-              className="inline-flex items-center justify-center px-8 py-0 font-semibold text-[20px] border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+            <Link
+              href="tel:+919000777981"
+              className="inline-flex items-center justify-center px-8 py-0 font-semibold text-[20px] border border-gray-300  text-gray-700 hover:bg-gray-50 transition-colors h-14 rounded-sm"
             >
-              +91 99999 99999
-            </a>
+              +91 {phone}
+            </Link>
           </div>
         </div>
 

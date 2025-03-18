@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, Camera } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -53,12 +53,8 @@ function Testimonial() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center relative overflow-hidden bg-[url('/testimonials-bg.png')] bg-center bg-cover">
       {/* Background Design */}
-      <div className="absolute inset-0 opacity-10">
-        <Camera className="absolute top-20 left-20 w-96 h-96 text-white transform -rotate-12" />
-        <Camera className="absolute bottom-20 right-20 w-96 h-96 text-white transform rotate-12" />
-      </div>
 
       <div className="max-w-4xl mx-auto px-4 py-16 relative">
         {/* Design & Photography Text */}
@@ -79,10 +75,6 @@ function Testimonial() {
         {/* Testimonial Content */}
         <div className="relative">
           <div className="text-center px-8 md:px-16">
-            <p className="text-gray-300 italic text-lg mb-8">
-              &quot;{testimonials[currentIndex].text}&quot;
-            </p>
-
             <div className="flex justify-center mb-4">
               <div className=" size-40 relative z-10 rounded-md border-4 overflow-visible">
                 <img
@@ -105,6 +97,9 @@ function Testimonial() {
             <h3 className="text-white font-medium">
               {testimonials[currentIndex].name}
             </h3>
+            <p className="text-gray-300 italic text-lg mb-8">
+              &quot;{testimonials[currentIndex].text}&quot;
+            </p>
           </div>
 
           {/* Navigation Buttons */}

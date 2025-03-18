@@ -1,9 +1,8 @@
+"use client";
 import Navbar from "@/components/navbar";
 import React from "react";
 import Image from "next/image";
 import { Camera } from "lucide-react";
-import signature from "@/public/signature.svg";
-import Link from "next/link";
 import thread from "@/public/long-string.svg";
 import photo1 from "@/public/photo1.png";
 import shadows from "@/public/shadows.svg";
@@ -23,8 +22,12 @@ import {
 } from "@/components/ui/card";
 import pink_baby from "@/public/pink-baby.png";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { useProfile } from "@/components/profile-wrapper";
 
 const About = () => {
+  const {
+    profile: { phone },
+  } = useProfile();
   return (
     <div>
       <Navbar className="sticky left-0 translate-x-0" color="black" />
@@ -42,7 +45,7 @@ const About = () => {
       </header>
 
       <div className="pl-[30px] sm:pl-[45px] lg:pl-[75px] flex justify-between flex-col-reverse xl:flex-row mt-10">
-        <div>
+        <div className="w-full lg:max-w-3xl">
           <div className="flex items-center gap-2 text-gray-600 mb-4">
             <Camera />
             <span className="text-xs uppercase font-semibold tracking-wider">
@@ -51,31 +54,28 @@ const About = () => {
           </div>
 
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            About Our Studio
+            About M Capture Studio
           </h1>
 
-          <p className="text-xl mb-4 font-semibold">
-            Welcome to John Studio - where every moment is a masterpiece.
+          <p className="text-gray-600 mb-8  leading-relaxed">
+            Welcome to M Capture Studio, where every frame tells a story! With 9
+            years of experience, we specialize in capturing life’s most
+            cherished moments with creativity and precision.
           </p>
 
-          <p className="text-gray-600 mb-8 text-[16px] max-w-3xl leading-relaxed">
-            We specialize in capturing life&aos;s most precious moments with
-            artistic precision and creative excellence. Our team of professional
-            photographers brings years of experience and a passionate eye for
-            detail to every shoot, ensuring your memories are preserved in
-            stunning clarity.
+          <p className="text-gray-600 mb-8 leading-relaxed">
+            From weddings to portfolio shoots, corporate events, and cover song
+            productions, we bring a unique touch to every project. Whether it’s
+            an indoor studio session or an outdoor adventure, we ensure each
+            shot reflects your vision beautifully.
           </p>
-
-          <div className="max-w-xs flex flex-col items-start gap-4">
-            <Image src={signature} alt="signature" />
-            <Link
-              href="tel:+919999999999"
-              className="inline-flex items-center justify-center py-0 font-semibold text-[16px] rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
-            >
-              +91 99999 99999
-            </Link>
-          </div>
+          <p className="text-[#F85D2E] mb-8 leading-relaxed">
+            At M Capture Studio, photography isn’t just about pictures—it’s
+            about memories that last a lifetime. Let’s create something
+            extraordinary together!
+          </p>
         </div>
+
         <div className="hidden xl:flex relative w-fit pr-20 items-start gap-5">
           <Card className="relative z-20 shadow-lg p-0 pb-16 w-[342px] flex items-center justify-start rounded-none">
             <CardHeader>
@@ -334,7 +334,7 @@ can relax and enjoy your photoshoot
           type="submit"
           className="w-fit bg-black text-white py-3 px-7 rounded-sm hover:bg-gray-800 transition"
         >
-          +91 99999 99999
+          +91 {phone}
         </button>
       </div>
     </div>

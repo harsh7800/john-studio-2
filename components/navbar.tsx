@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import logo from "@/public/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -50,11 +49,22 @@ const Navbar = ({
     <nav
       className={cn(
         "max-w-[1700px] py-4 w-full flex justify-between items-center fixed top-0 left-[50%] -translate-x-1/2 px-[30px] sm:px-[40px] lg:px-[75px] z-50 bg-transparent transition-colors duration-300",
-        isScrolled && "bg-white", // Add bg-white class if scrolled
+        isScrolled && "bg-white shadow-md shadow-[#FF4C001A]", // Add bg-white class if scrolled
         className
       )}
     >
-      <Image src={logo} alt="logo" />
+      <Link href="/" className="">
+        <Image
+          className="size-[45px] sm:size-[60px] mx-auto"
+          width={60}
+          height={60}
+          src={logo}
+          alt="logo"
+        />
+        <h3 className="text-center font-extrabold text-[12px] sm:text-[16px] uppercase">
+          m capture studio
+        </h3>
+      </Link>
       <div
         className={cn(
           "hidden min-[1200px]:flex items-center gap-10 text-[20px] font-semibold text-white",
@@ -98,9 +108,6 @@ const Navbar = ({
         >
           Contact
         </Link>
-        <Button className="bg-[#F85D2E] text-white w-[160px] h-12 rounded-md text-[20px] font-semibold ml-6">
-          Shop
-        </Button>
       </div>
 
       <Sheet>
@@ -110,13 +117,24 @@ const Navbar = ({
         <SheetContent className="border-0">
           <SheetHeader>
             <SheetTitle>
-              <Image src={logo} alt="logo" />
+              <div>
+                <Image
+                  className="size-[45px] sm:size-[60px] mx-auto"
+                  width={60}
+                  height={60}
+                  src={logo}
+                  alt="logo"
+                />
+                <h3 className="text-center font-extrabold text-[12px] sm:text-[16px] uppercase">
+                  m capture studio
+                </h3>
+              </div>
             </SheetTitle>
             <SheetDescription className="sr-only">
               account and remove your data from our servers.
             </SheetDescription>
 
-            <nav className="flex flex-col gap-10 pt-10 px-5">
+            <nav className="flex flex-col items-center gap-10 pt-10 px-5">
               <Link
                 href={"/"}
                 className={cn(
@@ -153,9 +171,6 @@ const Navbar = ({
               >
                 Contact
               </Link>
-              <Button className="bg-[#F85D2E] text-white w-[160px] h-12 rounded-md text-[20px] font-semibold">
-                Shop
-              </Button>
             </nav>
           </SheetHeader>
         </SheetContent>

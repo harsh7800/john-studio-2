@@ -7,6 +7,7 @@ import post_wed_shoot from "@/public/post_wed_shoot.png";
 import solo_shoot from "@/public/solo_shoot.png";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const ShootCategory = () => {
   const shoots = [
@@ -39,7 +40,7 @@ const ShootCategory = () => {
           We are giving a best solution for your Celebrations
         </h2>
         <a
-          href="#"
+          href="/portfolio"
           className="hidden md:flex text-[#FF4C00] items-center text-[20px] font-semibold hover:text-black transition-colors"
         >
           View all
@@ -66,12 +67,14 @@ const ShootCategory = () => {
                 alt={shoot.title}
               />
               <p className="font-semibold">{shoot.title}</p>
-              <Button
-                className="text-[#FF4C00] font-semibold border opacity-0 transition-all  group-hover/image:opacity-100 cursor-pointer px-14 py-6 text-md absolute top-1/2 left-1/2 -translate-x-1/2 bg-white"
-                variant={"ghost"}
-              >
-                View All
-              </Button>
+              <Link href={"/portfolio"}>
+                <Button
+                  className="text-[#FF4C00] font-semibold border opacity-0 transition-all  group-hover/image:opacity-100 cursor-pointer px-14 py-6 text-md absolute top-1/2 left-1/2 -translate-x-1/2 bg-white"
+                  variant={"ghost"}
+                >
+                  View All
+                </Button>
+              </Link>
             </div>
           );
         })}

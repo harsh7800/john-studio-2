@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+// next.config.js
+const nextConfig = {
+  images: {
+    domains: [
+      "muyovjpqrdbdyvwtkhcx.supabase.co",
+      // Add other image domains if needed
+    ],
+  },
+  // Keep your existing plugins and other config
   plugins: {
     "@tailwindcss/postcss": {},
   },

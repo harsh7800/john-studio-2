@@ -1,24 +1,24 @@
 import React from "react";
 import { Button } from "./ui/button";
 import header_baby_image from "@/public/header-baby.png";
-import header_decor_image from "@/public/header-image.png";
 import header_wed_image from "@/public/header-wedd-shoot.png";
 import header_fashion_image from "@/public/header-fashion-shoot.png";
 import header_birthday_image from "@/public/header-birthday-shoot.png";
 import HalfCylinderString from "@/public/header-string.svg";
 import HalfCylinderImage from "./half-cylinder-image";
 import Image from "next/image";
+import HeaderCarousel from "./header-carousel";
 
 const Header = () => {
   return (
     <header className="flex justify-between items-center min-h-[750px] h-screen relative">
-      <div className=" text-[65px] font-semibold w-full relative z-5 flex flex-col items-center sm:items-start sm:pl-[40px] lg:pl-[75px] gap-6">
-        <h1 className=" text-[35px] md:text-[45px] xl:text-[60px] leading-[65px] text-center sm:text-left">
+      <div className="text-[65px] font-semibold w-full relative z-5 flex flex-col justify-start items-center sm:items-start sm:pl-[40px] lg:pl-[75px] gap-6">
+        <h1 className="text-[25px] sm:text-[35px] lg:text-[45px] xl:text-[60px] leading-[35px] sm:leading-[65px] text-center sm:text-left">
           Capture best moments <br /> of your life
         </h1>
         <Button
           variant={"ghost"}
-          className="w-[250px] text-[20px] font-semibold relative h-14 border border-black relative rounded-none"
+          className="w-1/2 sm:w-[250px] text-[20px] font-semibold h-14 border border-black relative rounded-none"
         >
           Explore More
           <span className="absolute -right-[6px] bg-white -top-[6px] size-3 border border-black"></span>
@@ -27,11 +27,17 @@ const Header = () => {
           <span className="absolute -right-[6px] bg-white -bottom-[6px] size-3 border border-black"></span>
         </Button>
 
-        <div className="flex items-end gap-12 mt-[50px]">
+        <div className="flex items-end gap-12 mt-[10px] sm:mt-[50px]">
           <HalfCylinderImage
             absolute
             caption="Just Born Babies"
             image={header_baby_image}
+            className="hidden sm:block"
+          />
+          <HeaderCarousel
+            width={250}
+            height={250}
+            className="block sm:hidden"
           />
           <div className="p-6 min-w-[274px] relative hidden 2xl:flex items-center justify-center bg-white">
             <p className="w-[208px] relative text-[16px] font-medium">
@@ -45,17 +51,13 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <Image
-        src={header_decor_image}
-        alt="decor-image"
+      <HeaderCarousel
         width={450}
         height={450}
         className="hidden lg:block absolute top-1/2 -translate-y-1/2 left-1/2 z-1 -translate-x-1/2"
       />
       <div className=" hidden sm:flex flex-col  justify-center gap-[50px] items-end bg-black relative z-0 w-full h-full pr-[40px] lg:pr-[75px] pt-20">
-        <Image
-          src={header_decor_image}
-          alt="decor-image"
+        <HeaderCarousel
           width={500}
           height={500}
           className="block lg:hidden absolute top-1/2 -translate-y-1/2 left-1/2 z-1 -translate-x-1/2 "

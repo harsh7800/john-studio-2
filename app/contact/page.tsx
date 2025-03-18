@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Send } from "lucide-react";
+import { Loader, Send } from "lucide-react";
 import contact from "@/public/contact-us.png";
 import Image from "next/image";
 import Navbar from "@/components/navbar";
+import { toast } from "sonner";
 type FormData = {
   name: string;
   email: string;
@@ -14,25 +15,27 @@ type FormData = {
 };
 
 const services = [
-  "Website Development",
-  "Mobile App Development",
-  "UI/UX Design",
-  "Digital Marketing",
+  "Wedding Photography",
+  "Fashion Photography",
+  "Baby Photography",
+  "Birthday Photography",
+  "Event Photography",
+  "Corporate Photography",
   "Other",
 ];
 
 const budgets = [
-  "Less than $5,000",
-  "$5,000 - $10,000",
-  "$10,000 - $20,000",
-  "$20,000+",
+  "Less than Rs 5,000",
+  "Rs 5,000 - Rs 20,000",
+  "Rs 50,000 - Rs 100,000",
+  "Rs100,000+",
 ];
 
 function App() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<FormData>();
 
@@ -47,20 +50,20 @@ function App() {
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
+        toast.success("Message sent successfully!");
         reset();
       } else {
         throw new Error("Failed to send message");
       }
     } catch {
-      alert("Failed to send message. Please try again.");
+      toast.error("Failed to send message. Please try again.");
     }
   };
 
   return (
     <div className="border-b pb-10">
       <Navbar color="black" />
-      <div className="w-full flex justify-between  items-center mt-24 px-[30px] sm:px-[40px] lg:px-[75px] ">
+      <div className="w-full flex justify-between  items-center mt-[150px] px-[30px] sm:px-[40px] lg:px-[75px] ">
         <div className="w-full lg:max-w-xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-2">
             LET&apos;S TALK
@@ -196,9 +199,15 @@ function App() {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="w-full flex justify-center items-center gap-2 rounded-md bg-black px-3 py-3 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
             >
-              Submit <Send size={16} />
+              {isSubmitting ? (
+                <Loader className="animate-spin" size={18} />
+              ) : (
+                "Submit"
+              )}
+              {!isSubmitting && <Send size={16} />}
             </button>
           </form>
         </div>
