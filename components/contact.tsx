@@ -116,7 +116,7 @@ function Contact() {
               <h2 className="font-medium mb-4">Follow Us</h2>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href={`https://wa.me/${profile.phone}`}
                   className="text-gray-600 font-semibold hover:text-black"
                 >
                   <Image src={whatsapp} alt="Youtube" />

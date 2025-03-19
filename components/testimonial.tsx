@@ -1,44 +1,31 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { createClient } from "@/app/utils/supabase/client";
 
 interface Testimonial {
   id: number;
   name: string;
-  text: string;
-  image: string;
+  message: string;
+  profile_url: string;
   rating: number;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    text: "The photography session exceeded all our expectations. Every moment was captured beautifully, creating memories that will last a lifetime. The attention to detail and professionalism was outstanding.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200",
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    text: "An incredible experience from start to finish. The photographer made everyone feel comfortable and captured the most genuine moments. The final photos were absolutely stunning.",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200",
-    rating: 5,
-  },
-  {
-    id: 3,
-    name: "Emily Davis",
-    text: "We couldn't be happier with our wedding photos. Every special moment was captured perfectly, telling the story of our day in the most beautiful way possible.",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200",
-    rating: 5,
-  },
-];
-
 function Testimonial() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    async function FetchTestimonials() {
+      const supabase = createClient();
+      const { data, error } = await supabase.from("testimonials").select("*");
+      console.log("error: ", error);
+
+      console.log("data: ", data);
+      setTestimonials(data || []);
+    }
+    FetchTestimonials();
+  }, []);
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) =>
@@ -78,8 +65,11 @@ function Testimonial() {
             <div className="flex justify-center mb-4">
               <div className=" size-40 relative z-10 rounded-md border-4 overflow-visible">
                 <img
-                  src={testimonials[currentIndex].image}
-                  alt={testimonials[currentIndex].name}
+                  src={
+                    testimonials[currentIndex]?.profile_url ||
+                    `https://xsgames.co/randomusers/avatar.php?g=male`
+                  }
+                  alt={testimonials[currentIndex]?.name}
                   className="w-full h-full object-cover relative z-10"
                 />
                 <span className="size-40 absolute border z-5 border-[#FF4C00] -right-5 -top-5"></span>
@@ -87,18 +77,18 @@ function Testimonial() {
             </div>
 
             <div className="flex justify-center gap-1 mb-2">
-              {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+              {[...Array(testimonials[currentIndex]?.rating)].map((_, i) => (
                 <span key={i} className="text-yellow-400">
                   ★
                 </span>
               ))}
             </div>
 
-            <h3 className="text-white font-medium">
-              {testimonials[currentIndex].name}
+            <h3 className="text-white font-medium capitalize">
+              {testimonials[currentIndex]?.name}
             </h3>
             <p className="text-gray-300 italic text-lg mb-8">
-              &quot;{testimonials[currentIndex].text}&quot;
+              &quot;{testimonials[currentIndex]?.message}&quot;
             </p>
           </div>
 

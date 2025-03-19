@@ -37,7 +37,7 @@ const About = () => {
           About
         </h1>
         <p className="relative z-10 w-full lg:max-w-5xl text-white text-[22px]">
-          At John studio, we believe in the magic of capturing life’s most
+          At M Capture studio, we believe in the magic of capturing life’s most
           precious moments. Specializing in wedding, birthday, newborn, and
           model photoshoots, our team is dedicated to transforming your
           unforgettable moments into beautiful, lasting memories
@@ -277,7 +277,7 @@ const About = () => {
           Design & Photography
         </p>
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-          Why Choose John Studio
+          Why Choose M Capture Studio
         </h2>
         <div className="flex items-center justify-center gap-2 mt-4">
           <div className="w-18 h-[1px] bg-black"></div>

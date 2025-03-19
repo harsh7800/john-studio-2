@@ -49,8 +49,9 @@ const ShootCategory = () => {
       </div>
 
       <p className="text-[#5a5a5a] max-w-2xl">
-        Explore our portfolio and see why John studio is your perfect choice for
-        capturing every precious moment and creating memories visual narrative.
+        Explore our portfolio and see why M Capture Studio is your perfect
+        choice for capturing every precious moment and creating memories visual
+        narrative.
       </p>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2  items-center w-ful place-content-center ">

@@ -4,11 +4,11 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 
 // Create context
 const ProfileContext = createContext<{
-  profile: { id: string; email: string; phone: string };
+  profile: { id: string; email: string; phone: string; experience: number };
   loading: boolean;
   error: Error | null;
 }>({
-  profile: { id: "", email: "", phone: "" },
+  profile: { id: "", email: "", phone: "", experience: 9 },
   loading: true,
   error: null,
 });
@@ -24,7 +24,8 @@ export const ProfileProvider = ({
     id: string;
     email: string;
     phone: string;
-  }>({ id: "", email: "", phone: "" });
+    experience: number;
+  }>({ id: "", email: "", phone: "", experience: 9 });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const supabase = createClient();

@@ -1,8 +1,7 @@
 "use client";
 import { Camera } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import about_img from "@/public/about-image.png";
 import shoot_icon from "@/public/shoot_icon.svg";
 import camera_icon from "@/public/camera_tripod_icon.svg";
 import edit_icon from "@/public/image_icon.svg";
@@ -10,10 +9,31 @@ import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
 import { useProfile } from "./profile-wrapper";
+import { createClient } from "@/app/utils/supabase/client";
 
 const About = () => {
+  const [heroImage, setHeroImage] = useState("");
+
+  useEffect(() => {
+    const fetchHeroImage = async () => {
+      const supabase = createClient();
+      const { data, error } = await supabase
+        .from("hero-image")
+        .select("*")
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .single();
+
+      console.log("data: ", data);
+      if (!error && data) {
+        setHeroImage(data.image_url);
+      }
+    };
+
+    fetchHeroImage();
+  }, []);
   const {
-    profile: { phone },
+    profile: { phone, experience },
   } = useProfile();
   return (
     <section className="min-h-screen px-[30px] sm:px-[40px] lg:px-[75px] ">
@@ -32,9 +52,9 @@ const About = () => {
           </h1>
 
           <p className="text-gray-600 mb-8  leading-relaxed">
-            Welcome to M Capture Studio, where every frame tells a story! With 9
-            years of experience, we specialize in capturing life’s most
-            cherished moments with creativity and precision.
+            Welcome to M Capture Studio, where every frame tells a story! With{" "}
+            {experience} years of experience, we specialize in capturing life’s
+            most cherished moments with creativity and precision.
           </p>
 
           <p className="text-gray-600 mb-8 leading-relaxed">
@@ -65,11 +85,15 @@ const About = () => {
           </div>
         </div>
 
-        <Image
-          src={about_img}
-          alt="about image"
-          className="aspect-square  object-cover"
-        />
+        {heroImage && (
+          <Image
+            width={400}
+            height={200}
+            src={heroImage}
+            alt="about image"
+            className=" object-cover"
+          />
+        )}
       </div>
 
       {/* About Section 2 */}
