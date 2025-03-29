@@ -10,6 +10,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
 import { useProfile } from "./profile-wrapper";
 import { createClient } from "@/app/utils/supabase/client";
+import { useRouter } from "next/navigation";
 
 const About = () => {
   const [heroImage, setHeroImage] = useState("");
@@ -35,6 +36,8 @@ const About = () => {
   const {
     profile: { phone, experience },
   } = useProfile();
+
+  const router = useRouter();
   return (
     <section className="min-h-screen px-[30px] sm:px-[40px] lg:px-[75px] ">
       {/* About Section 1 */}
@@ -72,6 +75,7 @@ const About = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size={"lg"}
+              onClick={() => router.push("/portfolio")}
               className="bg-black text-white px-8 h-14 text-[20px] rounded-sm hover:bg-gray-800 transition-colors"
             >
               Discover More

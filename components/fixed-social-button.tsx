@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import youtube from "@/public/youtube.svg";
 import twitter from "@/public/twitter.svg";
 import whatsapp from "@/public/whatsapp.svg";
+import insta from "@/public/insta.svg";
 import facebook from "@/public/facebook.svg";
 import Image from "next/image";
 import { useProfile } from "./profile-wrapper";
@@ -18,7 +18,7 @@ const FixedSocialButton = () => {
         <Image width={25} height={25} src={whatsapp} alt="icon" />
       </Link>
       <Image width={25} height={25} src={facebook} alt="icon" />
-      <Image width={25} height={25} src={youtube} alt="icon" />
+      <Image width={25} height={25} src={insta} alt="icon" />
       <Image width={25} height={25} src={twitter} alt="icon" />
     </div>
   );

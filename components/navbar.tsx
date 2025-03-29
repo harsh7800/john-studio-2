@@ -48,7 +48,7 @@ const Navbar = ({
   return (
     <nav
       className={cn(
-        "max-w-[1700px] py-4 w-full flex justify-between items-center fixed top-0 left-[50%] -translate-x-1/2 px-[30px] sm:px-[40px] lg:px-[75px] z-50 bg-transparent transition-colors duration-300",
+        " py-4 w-full flex justify-between items-center fixed top-0 left-[50%] -translate-x-1/2 px-[30px] sm:px-[40px] lg:px-[75px] z-50 bg-transparent transition-colors duration-300",
         isScrolled && "bg-white shadow-md shadow-[#FF4C001A]", // Add bg-white class if scrolled
         className
       )}
@@ -61,7 +61,7 @@ const Navbar = ({
           src={logo}
           alt="logo"
         />
-        <h3 className="text-center font-extrabold text-[12px] sm:text-[16px] uppercase">
+        <h3 className="text-center font-extrabold text-[12px] sm:text-[16px] text-white uppercase">
           m capture studio
         </h3>
       </Link>

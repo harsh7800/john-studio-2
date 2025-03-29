@@ -13,7 +13,7 @@ const newsReader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "John Studio",
+  title: "M Capture Studio",
   description: "Studio that focuses on photography",
 };
 
@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${newsReader.className} antialiased`}>
         <ProfileWrapper>
-          <main className="max-w-[1700px] mx-auto min-w-[300px] relative">
+          <main className="mx-auto min-w-[300px] relative">
             <FixedSocialButton />
             {children}
             <Toaster position="top-center" richColors />

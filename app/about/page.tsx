@@ -23,10 +23,11 @@ import {
 import pink_baby from "@/public/pink-baby.png";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { useProfile } from "@/components/profile-wrapper";
+import Link from "next/link";
 
 const About = () => {
   const {
-    profile: { phone },
+    profile: { phone, experience },
   } = useProfile();
   return (
     <div>
@@ -57,13 +58,13 @@ const About = () => {
             About M Capture Studio
           </h1>
 
-          <p className="text-gray-600 mb-8  leading-relaxed">
+          <p className="text-gray-600 mb-4  leading-relaxed">
             Welcome to M Capture Studio, where every frame tells a story! With 9
             years of experience, we specialize in capturing life’s most
             cherished moments with creativity and precision.
           </p>
 
-          <p className="text-gray-600 mb-8 leading-relaxed">
+          <p className="text-gray-600 mb-4 leading-relaxed">
             From weddings to portfolio shoots, corporate events, and cover song
             productions, we bring a unique touch to every project. Whether it’s
             an indoor studio session or an outdoor adventure, we ensure each
@@ -111,7 +112,9 @@ const About = () => {
 
       <div className="flex relative items-center justify-center sm:justify-start gap-6 lg:gap-[150px] xl:gap-[240px] sm:pl-10 lg:pl-20 my-20 flex-wrap">
         <div>
-          <h3 className="text-[25px] font-semibold text-center">10+</h3>
+          <h3 className="text-[25px] font-semibold text-center">
+            {experience}
+          </h3>
           <p className="text-[16px] font-semibold">Years of Experience</p>
         </div>
         <div>
@@ -181,7 +184,7 @@ const About = () => {
           </div>
           <div className=" w-full space-y-4">
             <h3 className="font-bold text-[25px]">Wedding Photography</h3>
-            <div className="space-y-8 text-lg">
+            <div className="space-y-4 text-lg">
               <p>
                 Capture Your Love Story: Your wedding day is one of the most
                 important days of your life, and we are here to capture every
@@ -330,12 +333,13 @@ can relax and enjoy your photoshoot
           model photoshoots, our team is dedicated to transforming your
           unforgettable moments into beautiful, lasting memories
         </p>
-        <button
+        <Link
+          href={`tel:${phone}`}
           type="submit"
           className="w-fit bg-black text-white py-3 px-7 rounded-sm hover:bg-gray-800 transition"
         >
           +91 {phone}
-        </button>
+        </Link>
       </div>
     </div>
   );

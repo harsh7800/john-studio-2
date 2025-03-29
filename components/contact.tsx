@@ -7,6 +7,7 @@ import whatsapp from "@/public/whatsapp.svg";
 import facebook from "@/public/facebook.svg";
 import Image from "next/image";
 import { useProfile } from "./profile-wrapper";
+import Link from "next/link";
 
 function Contact() {
   const { profile } = useProfile();
@@ -102,13 +103,21 @@ function Contact() {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" />
-                <p className="text-gray-600 font-semibold">
+                <Link
+                  href={`tel:${profile.phone}`}
+                  className="text-gray-600 font-semibold"
+                >
                   +91 {profile.phone}
-                </p>
+                </Link>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-5 h-5" />
-                <p className="text-gray-600 font-semibold">{profile.email}</p>
+                <Link
+                  href={`mailto:${profile.email}`}
+                  className="text-gray-600 font-semibold"
+                >
+                  {profile.email}
+                </Link>
               </div>
             </div>
 
