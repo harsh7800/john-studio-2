@@ -9,9 +9,11 @@ const Footer = () => {
       <h1 className="text-3xl font-semibold text-white capitalize text-center">
         m capture studio
       </h1>
-      <p className="text-center">
+      <p className="text-center max-w-3xl text-gray-400 mx-auto">
         {" "}
-        We specialize in portraits, weddings, and commercial photography.
+        Capturing life&apos;s precious moments with artistic vision and
+        technical excellence. We specialize in portraits, weddings, and
+        commercial photography.
       </p>
 
       <div className="flex justify-center items-center gap-4">

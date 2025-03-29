@@ -18,10 +18,8 @@ function Testimonial() {
   useEffect(() => {
     async function FetchTestimonials() {
       const supabase = createClient();
-      const { data, error } = await supabase.from("testimonials").select("*");
-      console.log("error: ", error);
+      const { data } = await supabase.from("testimonials").select("*");
 
-      console.log("data: ", data);
       setTestimonials(data || []);
     }
     FetchTestimonials();
@@ -77,17 +75,25 @@ function Testimonial() {
             </div>
 
             <div className="flex justify-center gap-1 mb-2">
-              {[...Array(testimonials[currentIndex]?.rating)].map((_, i) => (
-                <span key={i} className="text-yellow-400">
-                  ★
-                </span>
-              ))}
+              {testimonials[currentIndex]?.rating
+                ? Array.from({ length: testimonials[currentIndex].rating }).map(
+                    (_, i) => (
+                      <span key={i} className="text-yellow-400">
+                        ★
+                      </span>
+                    )
+                  )
+                : Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i} className="text-yellow-400">
+                      ★
+                    </span>
+                  ))}
             </div>
 
             <h3 className="text-white font-medium capitalize">
               {testimonials[currentIndex]?.name}
             </h3>
-            <p className="text-gray-300 italic text-lg mb-8">
+            <p className="text-gray-300 italic text-lg mb-8 ">
               &quot;{testimonials[currentIndex]?.message}&quot;
             </p>
           </div>
