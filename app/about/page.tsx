@@ -180,7 +180,7 @@ const About = () => {
               </CardContent>
             </Card>
           </div>
-          <div className=" w-full space-y-4">
+          <div className=" w-full space-y-2">
             <h3 className="font-bold text-[25px]">Wedding Photography</h3>
             <div className="space-y-4 text-lg">
               <p>
@@ -208,7 +208,7 @@ const About = () => {
 
       <div className="flex flex-col-reverse gap-10 min-[1200px]:flex-row px-10 lg:px-20 py-10 w-full justify-between">
         <div className="space-y-6 max-w-4xl w-full">
-          <div className="space-y-4">
+          <div className="space-y-2">
             <h3 className="font-bold text-[25px]">Birthday Photography</h3>
             <p className="text-[16px]">
               Milestone Moments: Whether it’s a first birthday, a sweet sixteen,
@@ -223,7 +223,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-2">
             <h3 className="font-bold text-[25px]">Newborn Photography</h3>
             <p className="text-[16px]">
               Welcome to the World: Celebrate the arrival of your little one
@@ -256,7 +256,7 @@ const About = () => {
           />
         </div>
         <div className="space-y-6 max-w-4xl w-full">
-          <div className="space-y-4">
+          <div className="space-y-2">
             <h3 className="font-bold text-[25px]">Model Photoshoot</h3>
             <p className="text-[16px]">
               Portfolio Building: Whether you&apos;re an aspiring model or a
