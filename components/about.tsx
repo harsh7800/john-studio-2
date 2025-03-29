@@ -54,19 +54,19 @@ const About = () => {
             About M Capture Studio
           </h1>
 
-          <p className="text-gray-600 mb-8  leading-relaxed">
+          <p className="text-gray-600 mb-4  leading-relaxed">
             Welcome to M Capture Studio, where every frame tells a story! With{" "}
             {experience} years of experience, we specialize in capturing life’s
             most cherished moments with creativity and precision.
           </p>
 
-          <p className="text-gray-600 mb-8 leading-relaxed">
+          <p className="text-gray-600 mb-4 leading-relaxed">
             From weddings to portfolio shoots, corporate events, and cover song
             productions, we bring a unique touch to every project. Whether it’s
             an indoor studio session or an outdoor adventure, we ensure each
             shot reflects your vision beautifully.
           </p>
-          <p className="text-[#F85D2E] mb-8 leading-relaxed">
+          <p className="text-[#F85D2E] mb-4 leading-relaxed">
             At M Capture Studio, photography isn’t just about pictures—it’s
             about memories that last a lifetime. Let’s create something
             extraordinary together!
@@ -90,13 +90,15 @@ const About = () => {
         </div>
 
         {heroImage && (
-          <Image
-            width={400}
-            height={200}
-            src={heroImage}
-            alt="about image"
-            className=" object-cover"
-          />
+          <div className="w-full lg:max-w-xl">
+            <Image
+              width={400}
+              height={200}
+              src={heroImage}
+              alt="about image"
+              className="object-cover w-full rounded-sm"
+            />
+          </div>
         )}
       </div>
 

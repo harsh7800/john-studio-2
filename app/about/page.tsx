@@ -2,7 +2,6 @@
 import Navbar from "@/components/navbar";
 import React from "react";
 import Image from "next/image";
-import { Camera } from "lucide-react";
 import thread from "@/public/long-string.svg";
 import photo1 from "@/public/photo1.png";
 import shadows from "@/public/shadows.svg";
@@ -45,16 +44,15 @@ const About = () => {
         </p>
       </header>
 
-      <div className="pl-[30px] sm:pl-[45px] lg:pl-[75px] flex justify-between flex-col-reverse xl:flex-row mt-10">
+      <div className="pl-[30px] sm:pl-[45px] lg:pl-[75px] flex justify-between flex-col-reverse xl:flex-row gap-4 mt-10">
         <div className="w-full lg:max-w-3xl">
           <div className="flex items-center gap-2 text-gray-600 mb-4">
-            <Camera />
             <span className="text-xs uppercase font-semibold tracking-wider">
               Design & Photo Studio
             </span>
           </div>
 
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl lg:text-4xl font-bold text-gray-900 mb-6 relative z-50">
             About M Capture Studio
           </h1>
 
@@ -110,7 +108,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex relative items-center justify-center sm:justify-start gap-6 lg:gap-[150px] xl:gap-[240px] sm:pl-10 lg:pl-20 my-20 flex-wrap">
+      <div className="flex h-40 relative items-center justify-center sm:justify-start gap-6 lg:gap-[150px] xl:gap-[240px] sm:pl-10 lg:pl-20 my-20 flex-wrap overflow-hidden">
         <div>
           <h3 className="text-[25px] font-semibold text-center">
             {experience}
@@ -128,7 +126,7 @@ const About = () => {
         <Image
           src={shadows}
           alt="shadows"
-          className="absolute right-0 lg:-right-5"
+          className="z-50 absolute right-0 lg:-right-5"
         />
       </div>
 
@@ -208,7 +206,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col-reverse gap-5 min-[1200px]:flex-row px-10 lg:px-20 py-10 w-full justify-between">
+      <div className="flex flex-col-reverse gap-10 min-[1200px]:flex-row px-10 lg:px-20 py-10 w-full justify-between">
         <div className="space-y-6 max-w-4xl w-full">
           <div className="space-y-4">
             <h3 className="font-bold text-[25px]">Birthday Photography</h3>
@@ -240,19 +238,23 @@ const About = () => {
             </p>
           </div>
         </div>
-        <Image
-          src={pink_baby}
-          alt="pink_bg_baby"
-          className="w-[400px] aspect-video z-30 object-cover"
-        />
+        <div className="w-full max-w-[400px]">
+          <Image
+            src={pink_baby}
+            alt="pink_bg_baby"
+            className="z-30 object-cover"
+          />
+        </div>
       </div>
 
-      <div className="flex flex-col gap-5 min-[1200px]:flex-row px-10 lg:px-20 py-10 w-full justify-between">
-        <Image
-          src={photo_shoot}
-          alt="pink_bg_baby"
-          className="w-[526px] aspect-video z-30 object-cover"
-        />
+      <div className="flex flex-col gap-10 min-[1200px]:flex-row px-10 lg:px-20 py-10 w-full justify-between">
+        <div className="w-full max-w-[526px]">
+          <Image
+            src={photo_shoot}
+            alt="pink_bg_baby"
+            className="z-30 object-cover"
+          />
+        </div>
         <div className="space-y-6 max-w-4xl w-full">
           <div className="space-y-4">
             <h3 className="font-bold text-[25px]">Model Photoshoot</h3>
@@ -289,7 +291,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex justify-center flex-wrap gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-10 sm:px-20">
         <PerksCard
           image={excellence_icon}
           title="Professional Excellence"
@@ -357,9 +359,11 @@ const PerksCard = ({
   content: string;
 }) => {
   return (
-    <div className="border-3 rounded-t-full px-5 pt-20 pb-10 border-dashed max-w-[350px] flex items-center justify-start flex-col gap-2">
+    <div className="border-3  rounded-t-full px-5 pt-20 pb-10 border-dashed w-full flex items-center justify-start flex-col gap-2">
       <Image src={image} alt="excellence_icon" />
-      <h2 className="font-semibold text-[18px] text-black">{title}</h2>
+      <h2 className="font-semibold text-[18px] text-black text-center">
+        {title}
+      </h2>
       <p className="text-[14px] text-center font-semibold">{content}</p>
     </div>
   );

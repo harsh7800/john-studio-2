@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader } from "next/font/google";
 import "./globals.css";
-import FixedSocialButton from "@/components/fixed-social-button";
 import Contact from "@/components/contact";
 import { Toaster } from "sonner";
 import ProfileWrapper from "@/components/profile-wrapper";
@@ -27,7 +26,7 @@ export default function RootLayout({
       <body className={`${newsReader.className} antialiased`}>
         <ProfileWrapper>
           <main className="mx-auto min-w-[300px] relative">
-            <FixedSocialButton />
+            {/* <FixedSocialButton /> */}
             {children}
             <Toaster position="top-center" richColors />
             <Contact />
