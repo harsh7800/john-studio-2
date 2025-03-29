@@ -15,7 +15,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-
+import { useProfile } from "./profile-wrapper";
+import { IoMail, IoLogoFacebook } from "react-icons/io5";
+import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { RiInstagramFill, RiWhatsappFill } from "react-icons/ri";
 const Navbar = ({
   color = "white",
   className,
@@ -23,6 +26,9 @@ const Navbar = ({
   color?: "white" | "black";
   className?: string;
 }) => {
+  const {
+    profile: { phone, email },
+  } = useProfile();
   const path = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -48,26 +54,73 @@ const Navbar = ({
   return (
     <nav
       className={cn(
-        " py-4 w-full flex justify-between items-center fixed top-0 left-[50%] -translate-x-1/2 px-[30px] sm:px-[40px] lg:px-[75px] z-50 bg-transparent transition-colors duration-300",
+        " pt-8 pb-[10px] z-[9999] w-full flex justify-between items-center fixed top-0 left-[50%] -translate-x-1/2 px-[30px] sm:px-[40px] lg:px-[75px]  bg-transparent transition-colors duration-300 backdrop-blur-[px] ",
         isScrolled && "bg-white shadow-md shadow-[#FF4C001A]", // Add bg-white class if scrolled
         className
       )}
     >
+      <div
+        className={cn(
+          "bg-[#F8683C] px-[30px] sm:px-[40px] lg:px-[75px] h-[34px] w-full items-center fixed top-0 left-0 hidden",
+          isScrolled && "flex items-center justify-between gap-[24px]"
+        )}
+      >
+        <div className="flex items-center gap-[24px]">
+          <Link
+            target="_blank"
+            href={`https://www.google.com/maps/search/?api=1&query=Hyderabad+Telangana`}
+            className="flex item-center gap-2 text-white font-bold"
+          >
+            <FaMapMarkerAlt size={16} className="mt-[3px]" /> Hyderabad,
+            Telangana
+          </Link>
+          <Link
+            target="_blank"
+            href={`tel:${phone}`}
+            className="flex item-center gap-2 text-white font-bold"
+          >
+            <FaPhoneAlt size={14} className="mt-[3px]" /> {phone}
+          </Link>
+          <Link
+            target="_blank"
+            href={`mailto:${email}`}
+            className="flex item-end gap-2 text-white font-bold"
+          >
+            <IoMail size={18} className="mt-[3px]" /> {email}
+          </Link>
+        </div>
+        <div className="flex justify-center items-center gap-4">
+          <Link href={""}>
+            <RiInstagramFill color="#fff" size={24} />
+          </Link>
+          <Link href={""}>
+            <IoLogoFacebook color="#fff" size={24} />
+          </Link>
+          <Link href={""}>
+            <RiWhatsappFill color="#fff" size={24} />
+          </Link>
+        </div>
+      </div>
       <Link href="/" className="">
         <Image
-          className="size-[45px] sm:size-[60px] mx-auto"
-          width={60}
-          height={60}
+          className="size-[45px] mx-auto"
+          width={45}
+          height={45}
           src={logo}
           alt="logo"
         />
-        <h3 className="text-center font-extrabold text-[12px] sm:text-[16px] text-white uppercase">
+        <h3
+          className={cn(
+            "text-center font-extrabold text-[12px] sm:text-[16px] text-white uppercase",
+            isScrolled && "text-black"
+          )}
+        >
           m capture studio
         </h3>
       </Link>
       <div
         className={cn(
-          "hidden min-[1200px]:flex items-center gap-10 text-[20px] font-semibold text-white",
+          "hidden  min-[1200px]:flex items-center gap-10 text-[20px] font-semibold text-white",
           color === "black" && "text-black",
           isScrolled && "text-black" // Change text color to black if scrolled
         )}

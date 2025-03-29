@@ -30,7 +30,7 @@ const FullscreenHero = () => {
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [ ]);
+  }, []);
 
   return (
     <section className="relative w-full h-screen overflow-hidden text-white">
@@ -59,7 +59,7 @@ const FullscreenHero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-photo-text leading-tight mb-4 max-w-5xl animate-fade-in text-shadow-lg font-semibold">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-photo-text leading-tight mb-4 max-w-5xl animate-fade-in text-shadow-lg font-semibold">
           Capturing Moments That Last Forever
         </h1>
         <p className="text-photo-muted text-lg md:text-xl max-w-2xl mb-8 animate-fade-up delay-75 text-shadow">

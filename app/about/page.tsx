@@ -44,7 +44,7 @@ const About = () => {
         </p>
       </header>
 
-      <div className="pl-[30px] sm:pl-[45px] lg:pl-[75px] flex justify-between flex-col-reverse xl:flex-row gap-4 mt-10">
+      <div className="pl-[30px] sm:pl-[45px] lg:pl-[75px] flex justify-between items-center flex-col-reverse xl:flex-row gap-4 mt-10">
         <div className="w-full lg:max-w-3xl">
           <div className="flex items-center gap-2 text-gray-600 mb-4">
             <span className="text-xs uppercase font-semibold tracking-wider">
@@ -56,19 +56,19 @@ const About = () => {
             About M Capture Studio
           </h1>
 
-          <p className="text-gray-600 mb-4  leading-relaxed">
+          <p className="text-gray-600 mb-2  leading-[22px]">
             Welcome to M Capture Studio, where every frame tells a story! With 9
             years of experience, we specialize in capturing life’s most
             cherished moments with creativity and precision.
           </p>
 
-          <p className="text-gray-600 mb-4 leading-relaxed">
+          <p className="text-gray-600 mb-2 leading-[22px]">
             From weddings to portfolio shoots, corporate events, and cover song
             productions, we bring a unique touch to every project. Whether it’s
             an indoor studio session or an outdoor adventure, we ensure each
             shot reflects your vision beautifully.
           </p>
-          <p className="text-[#F85D2E] mb-8 leading-relaxed">
+          <p className="text-[#F85D2E] font-medium mb-2 leading-[22px]">
             At M Capture Studio, photography isn’t just about pictures—it’s
             about memories that last a lifetime. Let’s create something
             extraordinary together!
@@ -146,7 +146,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-start gap-14 flex-col lg:flex-row">
+        <div className="flex justify-between items-center gap-14 mb-10 flex-col lg:flex-row">
           <div className="flex relative w-[65%] items-start -space-x-10">
             <Card className="relative z-20 shadow-lg p-0 pb-16 w-fit px-4 flex items-center justify-start rounded-none">
               <CardHeader>
@@ -206,7 +206,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col-reverse gap-10 min-[1200px]:flex-row px-10 lg:px-20 py-10 w-full justify-between">
+      <div className="flex flex-col-reverse gap-10 mb-10 min-[1200px]:flex-row px-10 lg:px-20 py-10 w-full items-center justify-between">
         <div className="space-y-6 max-w-4xl w-full">
           <div className="space-y-2">
             <h3 className="font-bold text-[25px]">Birthday Photography</h3>
@@ -247,7 +247,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-10 min-[1200px]:flex-row px-10 lg:px-20 py-10 w-full justify-between">
+      <div className="flex flex-col gap-10 mb-10 min-[1200px]:flex-row px-10 lg:px-20 py-10 w-full justify-between items-center">
         <div className="w-full max-w-[526px]">
           <Image
             src={photo_shoot}

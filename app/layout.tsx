@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${newsReader.className} antialiased`}>
         <ProfileWrapper>
-          <main className="mx-auto min-w-[300px] relative">
+          <main className="mx-auto min-w-[300px] relative ">
             {/* <FixedSocialButton /> */}
             {children}
             <Toaster position="top-center" richColors />
