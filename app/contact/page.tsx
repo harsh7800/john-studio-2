@@ -6,10 +6,12 @@ import contact from "@/public/contact-us.png";
 import Image from "next/image";
 import Navbar from "@/components/navbar";
 import { toast } from "sonner";
+import { useProfile } from "@/components/profile-wrapper";
 type FormData = {
   name: string;
   email: string;
   service: string;
+  phoneNo: number;
   budget: string;
   message: string;
 };
@@ -31,7 +33,10 @@ const budgets = [
   "Rs100,000+",
 ];
 
-function App() {
+function Contact() {
+  const {
+    profile: { email },
+  } = useProfile();
   const {
     register,
     handleSubmit,
@@ -46,7 +51,10 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data, // Spread form data so it's not nested
+          ownerEmail: email, // Send owner email separately
+        }),
       });
 
       if (response.ok) {
@@ -110,6 +118,26 @@ function App() {
                   },
                 })}
                 className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
+              />
+              {errors.email && (
+                <p className="mt-1 text-[16px] font-semibold text-red-600">
+                  {errors.email.message}
+                </p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="text-[16px] font-semibold text-gray-700"
+              >
+                Phone No.
+              </label>
+              <input
+                type="number"
+                {...register("phoneNo", {
+                  required: "phoneNo is required",
+                })}
+                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
               {errors.email && (
                 <p className="mt-1 text-[16px] font-semibold text-red-600">
@@ -222,4 +250,4 @@ function App() {
   );
 }
 
-export default App;
+export default Contact;

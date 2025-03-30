@@ -54,7 +54,7 @@ const Navbar = ({
   return (
     <nav
       className={cn(
-        " pt-8 pb-[10px] z-[9999] w-full flex justify-between items-center fixed top-0 left-[50%] -translate-x-1/2 px-[30px] sm:px-[40px] lg:px-[75px]  bg-transparent transition-colors duration-300 backdrop-blur-[px] ",
+        " min-[850px]:pt-8 pb-[10px] z-[9999] w-full flex justify-between items-center fixed top-0 left-[50%] -translate-x-1/2 px-[30px] sm:px-[40px] lg:px-[75px]  bg-transparent transition-colors duration-300 backdrop-blur-[px] ",
         isScrolled && "bg-white shadow-md shadow-[#FF4C001A]", // Add bg-white class if scrolled
         className
       )}
@@ -62,7 +62,8 @@ const Navbar = ({
       <div
         className={cn(
           "bg-[#F8683C] px-[30px] sm:px-[40px] lg:px-[75px] h-[34px] w-full items-center fixed top-0 left-0 hidden",
-          isScrolled && "flex items-center justify-between gap-[24px]"
+          isScrolled &&
+            "hidden min-[850px]:flex items-center justify-between gap-[24px]"
         )}
       >
         <div className="flex items-center gap-[24px]">
@@ -89,7 +90,8 @@ const Navbar = ({
             <IoMail size={18} className="mt-[3px]" /> {email}
           </Link>
         </div>
-        <div className="flex justify-center items-center gap-4">
+
+        <div className="hidden sm:flex justify-center items-center gap-4">
           <Link href={""}>
             <RiInstagramFill color="#fff" size={24} />
           </Link>
