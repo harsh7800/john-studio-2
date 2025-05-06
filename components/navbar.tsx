@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import logo from "@/public/logo.svg";
+import logo from "@/public/logo.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -106,19 +106,19 @@ const Navbar = ({
       <Link href="/" className="">
         <Image
           className="size-[45px] mx-auto"
-          width={45}
-          height={45}
+          width={85}
+          height={85}
           src={logo}
           alt="logo"
         />
-        <h3
+        {/* <h3
           className={cn(
             "text-center font-extrabold text-[12px] sm:text-[16px] text-white uppercase",
             isScrolled && "text-black"
           )}
         >
           m capture studio
-        </h3>
+        </h3> */}
       </Link>
       <div
         className={cn(
