@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import logo from "@/public/logo.jpg";
+import logo from "@/public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -54,8 +54,9 @@ const Navbar = ({
   return (
     <nav
       className={cn(
-        " min-[850px]:pt-8 pb-[10px] z-[9999] w-full flex justify-between items-center fixed top-0 left-[50%] -translate-x-1/2 px-[30px] sm:px-[40px] lg:px-[75px]  bg-transparent transition-colors duration-300 backdrop-blur-[px] ",
-        isScrolled && "bg-white shadow-md shadow-[#FF4C001A]", // Add bg-white class if scrolled
+        "  z-[99] w-full py-8 flex justify-end items-center fixed top-0 left-[50%] -translate-x-1/2 px-[30px] sm:px-[40px] lg:px-[75px]  bg-transparent  transition-colors duration-300",
+        isScrolled &&
+          "bg-white pt-8 min-[850px]:pt-16 h-[80px] min-[850px]:h-[120px] shadow-md shadow-[#FF4C001A]", // Add bg-white class if scrolled
         className
       )}
     >
@@ -103,11 +104,18 @@ const Navbar = ({
           </Link>
         </div>
       </div>
-      <Link href="/" className="">
+
+      <Link
+        href="/"
+        className={cn(
+          "absolute left-0 sm:left-8 -top-12",
+          isScrolled && "-top-12 min-[850px]:-top-5"
+        )}
+      >
         <Image
-          className="size-[45px] mx-auto"
-          width={85}
-          height={85}
+          // className="bg-white"
+          width={240}
+          height={240}
           src={logo}
           alt="logo"
         />
@@ -120,9 +128,10 @@ const Navbar = ({
           m capture studio
         </h3> */}
       </Link>
+
       <div
         className={cn(
-          "hidden  min-[1200px]:flex items-center gap-10 text-[20px] font-semibold text-white",
+          "hidden min-[1200px]:flex items-center gap-10 text-[20px] font-semibold text-white",
           color === "black" && "text-black",
           isScrolled && "text-black" // Change text color to black if scrolled
         )}
@@ -172,7 +181,7 @@ const Navbar = ({
         <SheetContent className="border-0">
           <SheetHeader>
             <SheetTitle>
-              <div>
+              {/* <div>
                 <Image
                   className="size-[45px] sm:size-[60px] mx-auto"
                   width={60}
@@ -183,7 +192,7 @@ const Navbar = ({
                 <h3 className="text-center font-extrabold text-[12px] sm:text-[16px] uppercase">
                   m capture studio
                 </h3>
-              </div>
+              </div> */}
             </SheetTitle>
             <SheetDescription className="sr-only">
               account and remove your data from our servers.
